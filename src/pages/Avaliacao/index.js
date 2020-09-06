@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 import logoImg from '../../assets/images/logoAppWhite.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 import imagem from '../../assets/images/Corpo_numerado.png';
-
+import './styles.css';
 
 
 

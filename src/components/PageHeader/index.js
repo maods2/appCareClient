@@ -8,6 +8,8 @@ import backIcon from '../../assets/images/icons/back.svg';
 
 
 function PageHeader () {
+
+  
     return(
             <header className="page-header">
               <div className="top-bar-container">
