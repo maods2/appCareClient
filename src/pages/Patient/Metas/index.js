@@ -19,8 +19,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 
 import {Link} from 'react-router-dom';
-import logoImg from '../../assets/images/logoAppWhite.svg';
-import backIcon from '../../assets/images/icons/back.svg';
+import logoImg from '../../../assets/images/logoAppWhite.svg';
+import backIcon from '../../../assets/images/icons/back.svg';
 
 
 const useRowStyles = makeStyles({

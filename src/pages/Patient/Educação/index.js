@@ -4,8 +4,8 @@ import React from "react";
 import App from "./App";
 
 import {Link} from 'react-router-dom';
-import logoImg from '../../assets/images/logoAppWhite.svg';
-import backIcon from '../../assets/images/icons/back.svg';
+import logoImg from '../../../assets/images/logoAppWhite.svg';
+import backIcon from '../../../assets/images/icons/back.svg';
 
 
 export default function Educação() {

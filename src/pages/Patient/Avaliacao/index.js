@@ -12,9 +12,9 @@ import { Box } from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { Link } from 'react-router-dom';
-import logoImg from '../../assets/images/logoAppWhite.svg';
-import backIcon from '../../assets/images/icons/back.svg';
-import imagem from '../../assets/images/Corpo_numerado.png';
+import logoImg from '../../../assets/images/logoAppWhite.svg';
+import backIcon from '../../../assets/images/icons/back.svg';
+import imagem from '../../../assets/images/Corpo_numerado.png';
 import './styles.css';
 
 
