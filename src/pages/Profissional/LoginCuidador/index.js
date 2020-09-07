@@ -26,7 +26,7 @@ function LoginCuidadores() {
         }).then(() => {
             alert('Login ok');
 
-            history.push('/appmenu');
+            history.push('/Dashboard');
         }).catch(() => {
             alert('Erro! Usuário não cadastrado');
         })
@@ -90,9 +90,7 @@ function LoginCuidadores() {
                 </main>
 
 
-                {/* <Link to="/appmenu" className="botao">
-                        Entrar
-                </Link> */}
+           
                 <div className="cadastro">
                     <Link to="/cadastro">
                         Ainda não tem conta? Cadastre-se
