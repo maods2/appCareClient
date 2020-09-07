@@ -10,8 +10,7 @@ import backIcon from '../../../assets/images/icons/back.svg';
 
 export default function Educação() {
 
-    
-const rootElement = document.getElementById("root");
+
 return (
   <div id="page-cuidadores" className="container">
   {/* <PageHeader/> */}

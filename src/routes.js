@@ -2,15 +2,15 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Login from './pages/LoginPaciente/index';
-import Dashboard from './pages/Dashboard/index';
+import Login from './pages/Patient/LoginPaciente/index';
+import Dashboard from './pages/Profissional/Dashboard/index';
 import AppMenu from './pages/Patient/AppMenu';
 import Avaliacao from './pages/Patient/Avaliacao/index';
 import Cuidadores from './pages/Patient/Cuidadores';
 import SignUp from './pages/SignUp';
 import Metas from './pages/Patient/Metas';
 import Educacao from './pages/Patient/Educação';
-import LoginCuidador from './pages/LoginCuidador';
+import LoginCuidador from './pages/Profissional/LoginCuidador';
 
 export default function Routes() {
   return (

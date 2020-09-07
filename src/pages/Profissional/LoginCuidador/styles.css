@@ -7,7 +7,7 @@
     align-items: center;
 
     color: var(--color-text-in-primary);
-    background-image: url("../../teste.jpg")}
+    background-image: url("../../../teste.jpg")}
 
  
 .logo-container img {
@@ -120,9 +120,32 @@ overflow: hidder;
     margin: .2rem 0;
 }
 
+.buttons-container-change {
+    display: flex;
+    justify-content: center;
+    /* margin: .rem 0; */
+}
+
 .buttons-container a {
     width: 30rem;
     height: 4.5rem;
+    border-radius: 0.8rem;
+    margin-right: 1.6rem;
+    font: 700 1.8rem Archivo;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: var(--color-button-text);
+
+    transition: background-color 0.2s;
+}
+
+.buttons-container-change a {
+    width: 30rem;
+    height: 2.5rem;
     border-radius: 0.8rem;
     margin-right: 1.6rem;
     font: 700 1.8rem Archivo;
@@ -204,7 +227,7 @@ overflow: hidder;
     justify-content: center;
     text-decoration: none;
     transition: background-color 0.2s;
-    margin-top: 3.2rem;
+    margin-top: 1.2rem;
 }
 
 #page-app-content main button:hover {
@@ -230,8 +253,7 @@ overflow: hidder;
         "hero buttons buttons"
         "hero cadastro cadastro"
         "hero total total"
-
-        ;
+        
     }
     #page-app-content .logo-container {
         grid-area: logo;
@@ -247,7 +269,7 @@ overflow: hidder;
         font-size: 2.5rem;
     }
 
-    #page-app-content.logo-container img {
+    #page-app-content .logo-container img {
         height: 100%;
         align-items: flex-start;
     }
@@ -266,25 +288,13 @@ overflow: hidder;
         grid-area: buttons;
         /* justify-content: flex-start; */
         align-items: center;
-        padding: 9px;
-    }
-    .buttons-container-change {
-        display: flex;
-        grid-area: button;
-        justify-content: center;
-        align-items: center;
-        padding: 4px;
-        
-        
-    }
-    #bebe {
-        font-size: 2.4rem;
-        text-decoration: none;
+        padding: 2px;
     }
 
-    .buttons-container a{
+
+
+    #page-app-content .buttons-container a{
         font-size: 2.4rem;
-        text-decoration: none;
     }
 
     .input-block {
@@ -308,9 +318,11 @@ overflow: hidder;
     }
     #page-app-content main button {
         width: 20rem;
-        margin-top: 0;
+        margin-top: 6px;
 
     }
 
 
 }
+
+

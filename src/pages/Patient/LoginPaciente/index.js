@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import '../../assets/styles/global.css';
-import logoImg from '../../assets/images/logoApp.svg';
-import LandingImg from '../../assets/images/landingApp.svg';
+import '../../../assets/styles/global.css';
+import logoImg from '../../../assets/images/logoApp.svg';
+import LandingImg from '../../../assets/images/landingApp.svg';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 
 import './styles.css';
 

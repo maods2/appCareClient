@@ -13,7 +13,7 @@ function AppMenu() {
             <main>         
                 <div className="all-buttons"> 
                     <div className="buttons-container">
-                        <Link to="/dashboard" className="study">
+                        <Link to="/AppMenu" className="study">
                             Meu perfil
                         </Link>
                         </div>
@@ -33,12 +33,12 @@ function AppMenu() {
                         </Link>
                         </div>
                         <div className="buttons-container">
-                        <Link to="/dashboard" className="study">
+                        <Link to="/AppMenu" className="study">
                             Meu desempenho
                         </Link>
                         </div>
                         <div className="buttons-container">
-                        <Link to="/dashboard" className="study">
+                        <Link to="/AppMenu" className="study">
                             Chatbot
                         </Link>
                         </div>

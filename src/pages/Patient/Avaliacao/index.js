@@ -21,7 +21,8 @@ import './styles.css';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    margin: theme.spacing(4, 0, .5, 0),
+    margin: theme.spacing(0, 0, .5, 0),
+    padding: '30px 10px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -56,11 +57,11 @@ export default function Avaliação() {
 
   return (
 
-    <Container component="main" align='center' className={classes.paper}>
+    // <Container component="main" align='center' className={classes.paper}>
       <div align="center">
 
-        <Grid container spacing={2}>
-          <Grid item xs={20} item sm={12} md={12}>
+        {/* <Grid container spacing={2}>
+          <Grid item xs={20} item sm={12} md={12}> */}
 
 
             <div id="page-cuidadores" className="container">
@@ -75,8 +76,10 @@ export default function Avaliação() {
 
                 <div className="header-content">
                   <strong>Avaliação Diária
-                    <div align="center">{new Date().getUTCDate()}/{new Date().getMonth() + 1}/{new Date().getFullYear()}
-                    </div></strong>
+                    <div align="center">
+                      {new Date().getUTCDate()}/{new Date().getMonth() + 1}/{new Date().getFullYear()}
+                    </div>
+                  </strong>
                 </div>
               </header>
 
@@ -232,11 +235,11 @@ export default function Avaliação() {
 
               </Paper>
             </div>
-          </Grid>
-        </Grid>
+          {/* </Grid>
+        </Grid> */}
 
 
       </div>
-    </Container>
+    // </Container>
   );
 }
