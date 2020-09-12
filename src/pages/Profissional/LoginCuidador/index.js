@@ -3,19 +3,23 @@ import { Link, useHistory } from 'react-router-dom';
 
 import '../../../assets/styles/global.css';
 import logoImg from '../../../assets/images/logoApp.svg';
-import LandingImg from '../../../assets/images/landingApp.svg';
+import Doctor from '../../../assets/images/doctor.svg';
 
 import api from '../../../services/api';
 
 import './styles.css';
 
 
+
+
 function LoginCuidadores() {
+
 
     const history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+   
 
     function handleCreateForm(e) {
         e.preventDefault()
@@ -46,7 +50,7 @@ function LoginCuidadores() {
                     <h2>Para Profissionais</h2>
                 </div>
 
-                <img src={LandingImg}
+                <img src={Doctor}
                     alt="Plataforma Teste"
                     className="hero-image"
                 />
@@ -90,13 +94,15 @@ function LoginCuidadores() {
                 </main>
 
 
-           
+
                 <div className="cadastro">
                     <Link to="/cadastro">
                         Ainda não tem conta? Cadastre-se
                 </Link>
                 </div>
 
+
+               
                 <span className="total-connections">
                     Produzido por: E-brains Team
                 </span>

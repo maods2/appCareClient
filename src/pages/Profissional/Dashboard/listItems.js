@@ -3,8 +3,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import {Link} from 'react-router-dom';
 
-import MailIcon from '@material-ui/icons/Mail';
+
 
 import ExitToApp from '@material-ui/icons/ExitToApp';
 
@@ -25,14 +26,9 @@ export const mainListItems = (
       <ListItemText primary="Pacientes" />
     </ListItem> */}
   
-    <ListItem button>
-      <ListItemIcon>
-        <MailIcon />
-      </ListItemIcon>
-      <ListItemText primary="Mensagens" />
-    </ListItem>
     
-    <ListItem button>
+    
+    <ListItem button  component={Link} to="/">
       <ListItemIcon>
         <ExitToApp />
       </ListItemIcon>
@@ -43,24 +39,23 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    {/* <ListSubheader inset>Saved reports</ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <ListItemIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="Teste 1" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <ListItemIcon />
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="Teste 2" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <ListItemIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItem> */}
+      <ListItemText primary="Teste 3" />
+    </ListItem>
   </div>
 );
