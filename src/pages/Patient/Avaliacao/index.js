@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+// import Container from '@material-ui/core/Container';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Paper from '@material-ui/core/Paper';
 import { Box } from '@material-ui/core';
 import Slider from '@material-ui/core/Slider'
 //import Select from '@material-ui/core/Select';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Chip from '@material-ui/core/Chip';
 import { Link } from 'react-router-dom';
@@ -104,11 +104,11 @@ export default function Avaliação() {
 
   };
 
-  const handleDelete = index => {
-    const arrayChips = [...painLocation];
-    arrayChips.splice(index, 1);
-    setPainLocation(arrayChips);
-  };
+  // const handleDelete = index => {
+  //   const arrayChips = [...painLocation];
+  //   arrayChips.splice(index, 1);
+  //   setPainLocation(arrayChips);
+  // };
 
 
   return (
@@ -199,7 +199,7 @@ export default function Avaliação() {
 
 
           <Typography className={classes.Typography} component="h2" variant="h6" align="center" >
-            Onde está a dor que mais te encomoda? digite apenas um número.
+            Onde está a dor que mais te incomoda? digite apenas um número.
           </Typography>
           <form className={classes.root} noValidate autoComplete="off">
             <TextField

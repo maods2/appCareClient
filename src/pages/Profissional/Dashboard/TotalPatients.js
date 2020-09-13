@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import Link from '@material-ui/core/Link';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -8,23 +8,15 @@ import Title from './Title';
 
 
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import api from '../../../services/api';
+// import api from '../../../services/api';
 
-
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-function addNewCuidador() {
-  //Gerar um novo card de cuidadores.
-}
 
 
 const useStyles = makeStyles({
@@ -36,7 +28,7 @@ const useStyles = makeStyles({
 export default function TotalPatients() {
 
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const [email, setEmail] = useState('');
 

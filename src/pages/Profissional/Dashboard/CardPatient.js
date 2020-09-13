@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 //add meta
-import { Link, useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CardPatient() {
     //componente abrir edit
-    const history = useHistory();
+    // const history = useHistory();
     const [teste, setTeste] = useState('');
     function handleCreateDialog(e) {
         e.preventDefault()

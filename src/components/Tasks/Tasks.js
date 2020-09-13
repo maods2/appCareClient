@@ -1,33 +1,26 @@
 // import React from "react";
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
 
 import PropTypes from "prop-types";
 import classnames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
-import Tooltip from "@material-ui/core/Tooltip";
-import IconButton from "@material-ui/core/IconButton";
+// import Tooltip from "@material-ui/core/Tooltip";
+// import IconButton from "@material-ui/core/IconButton";
 import Table from "@material-ui/core/Table";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 // @material-ui/icons
-import Edit from "@material-ui/icons/Edit";
-import Close from "@material-ui/icons/Close";
+// import Edit from "@material-ui/icons/Edit";
+// import Close from "@material-ui/icons/Close";
 import Check from "@material-ui/icons/Check";
 // core components
 import styles from "../../assets/jss/tasksStyle.js";
 
 //editar - componente
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+
 
 const useStyles = makeStyles(styles);
 

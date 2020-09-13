@@ -3,8 +3,9 @@
 // #############################
 
 console.log({
-  PatientTask,
+  // PatientTask,
 });
+
 
 var PatientTask = [
     'Sign contract for "What are conference organizers afraid of?"',
@@ -14,7 +15,7 @@ var PatientTask = [
   ];
   
   module.exports = {
-    // these 3 are used to create the tasks lists in TasksCard - Dashboard view
+    // these is used to create the tasks lists in TasksCard - Dashboard view
     PatientTask,
     
   };

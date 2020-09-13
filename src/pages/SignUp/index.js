@@ -19,7 +19,7 @@ function SignUp() {
   const [lastName, setlastName] = useState('');
   const [nascimento, setNascimento] = useState('');
   const [cpf, setCPF] = useState('');
-  const [codigo, setCodigo] = useState('');
+  // const [codigo, setCodigo] = useState('');
   const [papel, setPapel] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,7 +77,6 @@ function SignUp() {
       lastName,
       nascimento,
       cpf,
-      codigo,
       papel,
       email,
       password
