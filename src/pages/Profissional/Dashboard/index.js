@@ -20,7 +20,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 // import Chart from './Chart';
 import TotalPatients from './TotalPatients';
-import Patients from './Patients';
 import CardPatients from './CardPatient';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -243,10 +242,6 @@ export default function Dashboard() {
                 <CardPatients />
                 <CardPatients />
                 <CardPatients />
-
-                
-
-
               </Paper>
             </Grid>
             {/* Recent Deposits */}

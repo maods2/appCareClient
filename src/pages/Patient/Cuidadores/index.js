@@ -69,8 +69,6 @@ export default function Cuidadores() {
           <strong>Cuidadores </strong>
         </div>
       </header>
-
-
       <main>
 
         <Button className={classes.botao} align="center" variant="outlined" color="primary" onClick={handleClickOpen}>
