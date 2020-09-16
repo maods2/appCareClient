@@ -24,7 +24,7 @@ import styles from "../../assets/jss/tasksStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Tasks(props) {
+export default function TasksDoc(props) {
 
 //componente abrir edit
 
@@ -40,7 +40,7 @@ export default function Tasks(props) {
     }
     setChecked(newChecked);
   };
-  const { tasksIndexes, tasks, rtlActive } = props;
+  const { tasksIndexes, tasksdoc, rtlActive } = props;
   const tableCellClasses = classnames(classes.tableCell, {
     [classes.tableCellRTL]: rtlActive
   });
@@ -68,9 +68,9 @@ export default function Tasks(props) {
                 }}
               />
             </TableCell>
-            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
+            <TableCell className={tableCellClasses}>{tasksdoc[value]}</TableCell>
            
-            {/* <TableCell className={classes.tableActions}>
+            <TableCell className={classes.tableActions}>
               <Tooltip
                 id="tooltip-top"
                 title="Edit Task"
@@ -105,7 +105,7 @@ export default function Tasks(props) {
                   />
                 </IconButton>
               </Tooltip>
-            </TableCell> */}
+            </TableCell>
 
 
           </TableRow>
@@ -115,9 +115,9 @@ export default function Tasks(props) {
   );
 }
 
-Tasks.propTypes = {
+TasksDoc.propTypes = {
   tasksIndexes: PropTypes.arrayOf(PropTypes.number),
-  tasks: PropTypes.arrayOf(PropTypes.node),
+  tasksdoc: PropTypes.arrayOf(PropTypes.node),
   rtlActive: PropTypes.bool,
   checkedIndexes: PropTypes.array
 };

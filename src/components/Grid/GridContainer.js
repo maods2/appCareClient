@@ -12,7 +12,7 @@ const styles = {
     display: 'flex',
     // width: "unset"
     width: "100vw",
-    padding: '30px 10px',
+    // padding: '30px 10px',
     alignItems: 'center',
     textAlign: 'center',
     
