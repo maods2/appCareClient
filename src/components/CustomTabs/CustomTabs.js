@@ -64,7 +64,9 @@ export default function CustomTabs(props) {
               />
             );
           })}
+
         </Tabs>
+        
       </CardHeader>
       <CardBody>
         {tabs.map((prop, key) => {

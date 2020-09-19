@@ -10,7 +10,9 @@
     
 }
 
-
+.button {
+    font-size: 30px;
+}
 .cuidador-item header {
     padding: 3.2rem 2rem;
     display: flex;
