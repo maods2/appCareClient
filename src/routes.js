@@ -11,6 +11,9 @@ import SignUp from './pages/SignUp';
 import Metas from './pages/Patient/Metas';
 import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
+import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
+
+
 
 export default function Routes() {
   return (
@@ -24,6 +27,8 @@ export default function Routes() {
         <Route path="/metas" component = {Metas}/>
         <Route path="/educacao" component = {Educacao}/>
         <Route path="/LoginCuidador" component = {LoginCuidador}/>
+        <Route path="/ProfilePatient" component = {ProfilePatient}/>
+
     </BrowserRouter>
   );
 }

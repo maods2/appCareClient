@@ -134,7 +134,7 @@ export default function CardPatient() {
                                 <DialogActions>
                                     <Button type="submit" color="primary">
                                         Adicionar
-              </Button>
+                                    </Button>
                                 </DialogActions>
                             </form>
                         </Dialog>
