@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import logoImg from '../../assets/images/logoAppWhite.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 
-import api from '../../services/api';
+import API_URL from '../../services/api';
 
 import './styles.css';
 
@@ -19,7 +19,7 @@ function SignUp() {
   const [lastName, setlastName] = useState('');
   const [nascimento, setNascimento] = useState('');
   const [cpf, setCPF] = useState('');
-  // const [codigo, setCodigo] = useState('');
+  const [codigo, setCodigo] = useState('');
   const [papel, setPapel] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +28,7 @@ function SignUp() {
     e.preventDefault()
 
     if (papel == 1) {
-      api.post('api/patient/register', {
+      API_URL.post('api/patient/register', {
         firstName,
         lastName,
         /*nascimento,
@@ -49,7 +49,7 @@ function SignUp() {
       })
     }
     else if (papel == 2) {
-      api.post('api/professional/register', {
+      API_URL.post('api/professional/register', {
         firstName,
         lastName,
         /*nascimento,
@@ -129,7 +129,7 @@ function SignUp() {
               />
             </div>
 
-            {/* <div className="input-block">
+            {papel == 2 &&(<div className="input-block">
               <label htmlFor="id">Código do Conselho</label>
               <input
                 type="text"
@@ -137,7 +137,7 @@ function SignUp() {
                 value={codigo}
                 onChange={(e) => { setCodigo(e.target.value) }}
               />
-            </div> */}
+            </div>)}
 
             <div
               className="input-block">

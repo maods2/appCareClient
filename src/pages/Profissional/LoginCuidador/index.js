@@ -5,7 +5,8 @@ import '../../../assets/styles/global.css';
 import logoImg from '../../../assets/images/logoApp.svg';
 import Doctor from '../../../assets/images/doctor.svg';
 
-import api from '../../../services/api';
+import API_URL from '../../../services/api';
+import AuthService from '../../../services/auth.service'
 
 import './styles.css';
 
@@ -23,25 +24,14 @@ function LoginCuidadores() {
 
     function handleCreateForm(e) {
         e.preventDefault()
-
-        api.post('api/professional/authentication', {
-            email,
-            password
-        }).then(() => {
-            alert('Login ok');
-
+       
+        AuthService.professionalLogin(email,password).then(() => {
             history.push('/Dashboard');
         }).catch(() => {
             alert('Erro! Usuário não cadastrado');
         })
-
-        console.log({
-            email,
-            password,
-        });
-
-
     }
+    
     return (
         <div id="page-app">
             <div id="page-app-content" className="container">

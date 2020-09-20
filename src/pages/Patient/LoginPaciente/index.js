@@ -5,7 +5,8 @@ import '../../../assets/styles/global.css';
 import logoImg from '../../../assets/images/logoApp.svg';
 import LandingImg from '../../../assets/images/landingApp.svg';
 
-import api from '../../../services/api';
+
+import AuthService from '../../../services/auth.service'
 
 import './styles.css';
 
@@ -20,12 +21,7 @@ function App() {
     function handleCreateForm(e) {
         e.preventDefault()
 
-        api.post('api/patient/authentication', {
-            email,
-            password
-        }).then(() => {
-            alert('Login ok');
-
+        AuthService.patientLogin(email,password).then(() => {
             history.push('/appmenu');
         }).catch(() => {
             alert('Erro! Usuário não cadastrado');
