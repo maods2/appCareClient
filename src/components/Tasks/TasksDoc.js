@@ -29,6 +29,16 @@ export default function TasksDoc(props) {
 //componente abrir edit
 
   const classes = useStyles();
+
+  const [edit, setEdit] = React.useState('');
+
+  function handleCreateDialog(e) {
+      e.preventDefault()
+      console.log({
+          edit,
+      });
+  }
+  
   const [checked, setChecked] = React.useState([...props.checkedIndexes]);
   const handleToggle = value => {
     const currentIndex = checked.indexOf(value);
@@ -40,35 +50,22 @@ export default function TasksDoc(props) {
     }
     setChecked(newChecked);
   };
-  const { tasksIndexes, tasksdoc, rtlActive } = props;
+  const { tasksIndexes, tasks, rtlActive } = props;
   const tableCellClasses = classnames(classes.tableCell, {
     [classes.tableCellRTL]: rtlActive
   });
 
-  console.log({
-    checked,
-  });
+ 
 
   
   return (
     <Table className={classes.table}>
+
       <TableBody>
         {tasksIndexes.map(value => (
           <TableRow key={value} className={classes.tableRow}>
-            <TableCell className={tableCellClasses}>
-              <Checkbox
-                checked={checked.indexOf(value) !== -1}
-                tabIndex={-1}
-                onClick={() => handleToggle(value)}
-                checkedIcon={<Check className={classes.checkedIcon} />}
-                icon={<Check className={classes.uncheckedIcon} />}
-                classes={{
-                  checked: classes.checked,
-                  root: classes.root
-                }}
-              />
-            </TableCell>
-            <TableCell className={tableCellClasses}>{tasksdoc[value]}</TableCell>
+            
+            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
            
             <TableCell className={classes.tableActions}>
               <Tooltip
@@ -77,13 +74,18 @@ export default function TasksDoc(props) {
                 placement="top"
                 classes={{ tooltip: classes.tooltip }}
               >
+             
+
                 <IconButton
                   aria-label="Edit"
                   className={classes.tableActionButton}
                 >
                   <Edit
+                   value={edit}
+                   onChange={(e) => { setEdit(e.target.value) }}
                     className={
                       classes.tableActionButtonIcon + " " + classes.edit
+                      
                     }
                   />
                 </IconButton>
@@ -105,6 +107,8 @@ export default function TasksDoc(props) {
                   />
                 </IconButton>
               </Tooltip>
+              
+
             </TableCell>
 
 
@@ -117,7 +121,6 @@ export default function TasksDoc(props) {
 
 TasksDoc.propTypes = {
   tasksIndexes: PropTypes.arrayOf(PropTypes.number),
-  tasksdoc: PropTypes.arrayOf(PropTypes.node),
+  tasks: PropTypes.arrayOf(PropTypes.node),
   rtlActive: PropTypes.bool,
-  checkedIndexes: PropTypes.array
 };
