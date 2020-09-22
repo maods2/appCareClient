@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
 import Button from '@material-ui/core/Button';
 // import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -12,14 +13,14 @@ import Slider from '@material-ui/core/Slider'
 // import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Chip from '@material-ui/core/Chip';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logoImg from '../../../assets/images/logoAppWhite.svg';
 import backIcon from '../../../assets/images/icons/back.svg';
 import imagem from '../../../assets/images/Corpo_numerado.png';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import './styles.css';
-
+import AuthService from '../../../services/auth.service'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -95,9 +96,12 @@ export default function Avaliação() {
   const [selfEsteem, setSelfEsteem] = useState(0);
   const [anguish, setAnguish] = useState(0);
   const [anxious, setAnxious] = useState(0);
+  const [userdata, setUserData] = useState();
 
-
-
+  useEffect(() => {
+    const { user: { firstName } } = AuthService.getCurrentUser()
+    setUserData(firstName);
+  }, []);
 
 
   const sendAssessement = () => {
@@ -138,7 +142,7 @@ export default function Avaliação() {
 
 
           <Typography component="h2" variant="h6" align="center">
-            Você está sentindo dor hoje?
+            { userdata }, você está sentindo dor hoje?
           </Typography>
           <div className={classes.root}>
             <Box>

@@ -1,17 +1,21 @@
-import api from "./api";
+import axios from 'axios';
+const API_URL = 'https://appsaudebackend.herokuapp.com/'
+import authHeader from './auth-header';
 
-class Goals {
+
+class GoalsService {
     insertProfissional (data){
-        return api.put('/api/goals/insert/profissional', data);
+        return axios.put(API_URL + '/api/goals/insert/profissional', data, { headers: authHeader() });
     }
 
     updateGoal (data){
-        return api.put('/api/goals/up', data);
+        return axios.put(API_URL + '/api/goals/up', data, { headers: authHeader() });
     }
 
     getAllGoalsByUserId (patient_id){
-        return api.get('/api/goals/id', patient_id);
+
+        return axios.put(API_URL + '/api/goals/id', patient_id, { headers: authHeader() });
     }
 }
 
-export default new Goals();
+export default new GoalsService();

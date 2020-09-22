@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, NavLink } from 'react-router-dom';
 
 import '../../../assets/styles/global.css';
 import logoImg from '../../../assets/images/logoApp.svg';
@@ -77,9 +77,9 @@ function App() {
                     </form>
                     <div className="buttons-container-change">
                         <button id="bebe">
-                            <Link to="/LoginCuidador">
+                            <NavLink to="/LoginCuidador">
                                 Profissional
-                            </Link>
+                            </NavLink>
                         </button>
                     </div>
                 </main>
@@ -103,7 +103,7 @@ function App() {
         </div>
 
     );
-    ;
+    
 }
 
 export default App;

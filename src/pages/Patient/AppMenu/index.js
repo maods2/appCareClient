@@ -1,60 +1,79 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useHistory, NavLink } from 'react-router-dom';
 
-
+import AuthService from '../../../services/auth.service'
 import PageHeader from '../../../components/PageHeader';
 
 import './styles.css';
 
 function AppMenu() {
+
+    const history = useHistory();
+
+    const [userData, setUserData] = useState();
+
+
+    useEffect(() => {
+        (async () => {
+            const { user: { firstName } } = AuthService.getCurrentUser()
+            setUserData(firstName);
+        })();
+    }, []);
+
+
+    
     return (
         <div id="page-menu-list" className="container">
-            <PageHeader/>
-            <main>         
-                <div className="all-buttons"> 
-                    <div className="buttons-container">
-                        <Link to="/AppMenu" className="study">
-                            Meu perfil
-                        </Link>
+            {userData &&
+                <>
+                    <PageHeader />
+                    <main>
+                        <div className="all-buttons">
+                            <div className="buttons-container">
+                                <NavLink to="/AppMenu" className="study">
+                                    Meu perfil
+                            </NavLink>
+                            </div>
+
+                            <div className="buttons-container">
+                                <NavLink to="/Avaliacao" className="study">
+                                    Avaliação Diária
+                            </NavLink>
+                            </div>
+                            <div className="buttons-container">
+                                <NavLink to="/metas" className="study">
+                                    Minhas Metas
+                            </NavLink>
+                            </div>
+                            <div className="buttons-container">
+                                <NavLink to="/educacao" className="study">
+                                    Educação em dor
+                            </NavLink>
+                            </div>
+                            <div className="buttons-container">
+                                <NavLink to="/AppMenu" className="study">
+                                    Meu desempenho
+                            </NavLink>
+                            </div>
+
+                            <div className="buttons-container">
+                                <NavLink to="/cuidadores" className="study">
+                                    Cuidadores
+                            </NavLink>
+                            </div>
                         </div>
-                        <div className="buttons-container">
-                        <Link to="/Avaliacao" className="study">
-                            Avaliação Diária
-                        </Link>
-                        </div>
-                        <div className="buttons-container">
-                        <Link to="/metas" className="study">
-                            Minhas Metas
-                        </Link>
-                        </div>
-                        <div className="buttons-container">
-                        <Link to="/educacao" className="study">
-                            Educação em dor
-                        </Link>
-                        </div>
-                        <div className="buttons-container">
-                        <Link to="/AppMenu" className="study">
-                            Meu desempenho
-                        </Link>
-                        </div>
-                        <div className="buttons-container">
-                        <Link to="/AppMenu" className="study">
-                            Chatbot
-                        </Link>
-                        </div>
-                        <div className="buttons-container">
-                        <Link to="/cuidadores" className="study">
-                            Cuidadores
-                        </Link>
-                        </div>
-                    </div>
-                 
-                </main>
-                <span className="total-connections">
-                Produzido por: E-brains Team
-                </span>    
+
+                    </main>
+                    <span className="total-connections">
+                        Produzido por: E-brains Team
+            </span>
+                </>}
         </div>
     )
+    // }
+
+
+
 }
 
 export default AppMenu;
