@@ -25,10 +25,10 @@ export default function Routes() {
         <ProtectedRoute path="/Avaliacao" component={Avaliacao} />
         <ProtectedRoute path="/Perfil" component={Perfil} />
         <ProtectedRoute path="/Cuidadores" component={Cuidadores} />
-        <ProtectedRoute path="/Cadastro" component = {SignUp} />
+        <Route path="/Cadastro" component = {SignUp} />
         <ProtectedRoute path="/metas" component = {Metas}/>
         <ProtectedRoute path="/educacao" component = {Educacao}/>
-        <ProtectedRoute path="/LoginCuidador" component = {LoginCuidador}/>
+        <Route path="/LoginCuidador" component = {LoginCuidador}/>
         <ProtectedRoute path="/ProfilePatient" component = {ProfilePatient}/>
         </Switch>
     </BrowserRouter>
