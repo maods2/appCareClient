@@ -26,7 +26,7 @@ function AppMenu() {
         <div id="page-menu-list" className="container">
             {userData &&
                 <>
-                    <PageHeader />
+                    <PageHeader name={userData} />
                     <main>
                         <div className="all-buttons">
                             <div className="buttons-container">

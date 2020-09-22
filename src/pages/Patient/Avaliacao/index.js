@@ -96,7 +96,7 @@ export default function Avaliação() {
   const [selfEsteem, setSelfEsteem] = useState(0);
   const [anguish, setAnguish] = useState(0);
   const [anxious, setAnxious] = useState(0);
-  const [userdata, setUserData] = useState();
+  const [userData, setUserData] = useState();
 
   useEffect(() => {
     const { user: { firstName } } = AuthService.getCurrentUser()
@@ -119,7 +119,7 @@ export default function Avaliação() {
 
 
     <div align="center">
-      <div id="page-cuidadores" className="container">
+      { userData && <div id="page-cuidadores" className="container">
 
         <header className="page-header">
           <div className="top-bar-container">
@@ -142,7 +142,7 @@ export default function Avaliação() {
 
 
           <Typography component="h2" variant="h6" align="center">
-            { userdata }, você está sentindo dor hoje?
+            {userData}, você está sentindo dor hoje?
           </Typography>
           <div className={classes.root}>
             <Box>
@@ -399,7 +399,7 @@ export default function Avaliação() {
 
 
         </Paper>
-      </div>
+      </div>}
 
 
 

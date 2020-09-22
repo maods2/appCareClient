@@ -10,7 +10,7 @@ import backIcon from '../../assets/images/icons/back.svg';
 //import api from '../../services/api';
 
 
-function PageHeader() {
+function PageHeader(props) {
 
 
   // const history = useHistory();
@@ -40,7 +40,7 @@ function PageHeader() {
 
         <div className="header-content">
 
-          <strong>Bem vindo =) </strong>
+          <strong>Bem vindo {props && props.name } !</strong>
         </div>
       </header>
     );
