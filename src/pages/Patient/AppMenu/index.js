@@ -30,7 +30,7 @@ function AppMenu() {
                     <main>
                         <div className="all-buttons">
                             <div className="buttons-container">
-                                <NavLink to="/AppMenu" className="study">
+                                <NavLink to="/Perfil" className="study">
                                     Meu perfil
                             </NavLink>
                             </div>

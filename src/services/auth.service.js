@@ -2,9 +2,7 @@ import API_URL from './api';
 
 
 class AuthService {
-  constructor() {
-    this.authenticated = false
-  }
+
   patientLogin(email, password) {
     return API_URL.post('api/patient/authentication', {
       email,
@@ -37,7 +35,7 @@ class AuthService {
 
   logout() {
     localStorage.removeItem("user");
-    this.authenticated = false
+ 
   }
 
   patientRegister(firstName, lastName, email, password) {

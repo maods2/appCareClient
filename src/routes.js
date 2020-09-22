@@ -13,7 +13,7 @@ import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
 import ProtectedRoute from './services/ProtectedRoute';
-
+import Perfil from './pages/Patient/Perfil';
 
 export default function Routes() {
   return (
@@ -23,6 +23,7 @@ export default function Routes() {
         <ProtectedRoute path="/AppMenu" component={AppMenu} />
         <ProtectedRoute path="/Dashboard" component={Dashboard} />
         <ProtectedRoute path="/Avaliacao" component={Avaliacao} />
+        <ProtectedRoute path="/Perfil" component={Perfil} />
         <ProtectedRoute path="/Cuidadores" component={Cuidadores} />
         <ProtectedRoute path="/Cadastro" component = {SignUp} />
         <ProtectedRoute path="/metas" component = {Metas}/>

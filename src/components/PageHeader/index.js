@@ -11,24 +11,13 @@ import backIcon from '../../assets/images/icons/back.svg';
 
 
 function PageHeader(props) {
+  const history = useHistory();
 
+  const logout = () =>{
+    AuthService.logout();
+    history.push("/");
+  }
 
-  // const history = useHistory();
-  // const [userData, setUserData] = useState();
-
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const { user: { firstName } } = AuthService.getCurrentUser()
-  //     setUserData(firstName);
-  //     console.log(userData)
-  //   })();
-  // }, []);
-
-  // if (!userData) {
-  //   history.push("/");
-  // }
-  // else {
     return (
       <header className="page-header">
         <div className="top-bar-container">
@@ -36,6 +25,7 @@ function PageHeader(props) {
             <img src={backIcon} alt="Voltar" />
           </Link>
           <img src={logoImg} alt="Cuidador" />
+          <a onClick={logout}>Logout</a>
         </div>
 
         <div className="header-content">
