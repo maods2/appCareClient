@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
-.App {
-  /* text-align: center; */
-} 
+
 
 .App-logo {
   height: 40vmin;
@@ -46,3 +44,7 @@
 }
 
 
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl
+{
+  padding: 0px;
+}
