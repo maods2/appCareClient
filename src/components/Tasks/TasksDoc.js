@@ -65,7 +65,7 @@ export default function TasksDoc(props) {
         {tasksIndexes.map(value => (
           <TableRow key={value} className={classes.tableRow}>
             
-            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
+            {/* <TableCell className={tableCellClasses}>{tasks[value]}</TableCell> */}
            
             <TableCell className={classes.tableActions}>
               <Tooltip

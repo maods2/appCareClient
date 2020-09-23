@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeader from '../../../components/PageHeader';
-
+import { Link, useHistory, NavLink } from 'react-router-dom';
 
 import AuthService from '../../../services/auth.service'
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,22 +48,17 @@ export default function Perfil() {
             <h1>PERFIL DO USUÁRIO</h1>
 
             <div className={classes.root}>
- 
 
 
 
-
-
- 
-              <Fab color="primary" aria-label="edit">
-                <EditIcon />
-              </Fab>
-    
             </div>
 
 
           </div>
+          <NavLink to="/Perfiledit"> <Fab color="primary" aria-label="edit">
+            <EditIcon />
 
+          </Fab></NavLink>
 
         </div>
 

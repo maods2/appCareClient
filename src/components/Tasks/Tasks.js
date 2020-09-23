@@ -68,7 +68,7 @@ export default function Tasks(props) {
                 }}
               />
             </TableCell>
-            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
+            {/* <TableCell className={tableCellClasses}>{tasks[value]}</TableCell> */}
            
             {/* <TableCell className={classes.tableActions}>
               <Tooltip

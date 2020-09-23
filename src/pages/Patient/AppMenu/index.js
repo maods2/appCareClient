@@ -34,7 +34,7 @@ function AppMenu() {
                                     Meu perfil
                             </NavLink>
                             </div>
-
+                            
                             <div className="buttons-container">
                                 <NavLink to="/Avaliacao" className="study">
                                     Avaliação Diária

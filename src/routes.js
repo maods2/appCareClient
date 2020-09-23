@@ -14,6 +14,7 @@ import LoginCuidador from './pages/Profissional/LoginCuidador';
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
 import ProtectedRoute from './services/ProtectedRoute';
 import Perfil from './pages/Patient/Perfil';
+import Perfiledit from './pages/Patient/Perfil/perfilEdit';
 
 export default function Routes() {
   return (
@@ -21,15 +22,16 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Login} />
         <ProtectedRoute path="/AppMenu" component={AppMenu} />
-        <ProtectedRoute path="/Dashboard" component={Dashboard} />
+        <Route path="/Dashboard" component={Dashboard} />
         <ProtectedRoute path="/Avaliacao" component={Avaliacao} />
         <ProtectedRoute path="/Perfil" component={Perfil} />
+        <ProtectedRoute path="/Perfiledit" component={Perfiledit} />
         <ProtectedRoute path="/Cuidadores" component={Cuidadores} />
         <Route path="/Cadastro" component = {SignUp} />
         <ProtectedRoute path="/metas" component = {Metas}/>
         <ProtectedRoute path="/educacao" component = {Educacao}/>
         <Route path="/LoginCuidador" component = {LoginCuidador}/>
-        <ProtectedRoute path="/ProfilePatient" component = {ProfilePatient}/>
+        <Route path="/ProfilePatient" component = {ProfilePatient}/>
         </Switch>
     </BrowserRouter>
   );
