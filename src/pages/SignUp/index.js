@@ -6,7 +6,7 @@ import logoImg from '../../assets/images/logoAppWhite.svg';
 import backIcon from '../../assets/images/icons/back.svg';
 
 import API_URL from '../../services/api';
-
+import AuthService from '../../services/auth.service'
 import './styles.css';
 
 
@@ -28,7 +28,7 @@ function SignUp() {
     e.preventDefault()
 
     if (papel == 1) {
-      API_URL.post('api/patient/register', {
+      AuthService.patientRegister(
         firstName,
         lastName,
         /*nascimento,
@@ -37,9 +37,9 @@ function SignUp() {
         papel,*/
         email,
         password
-      }).then(() => {
-        alert('Cadastro realizado com sucesso!');
+      ).then(() => {
 
+        alert('Cadastro realizado com sucesso!');
         history.push('/');
       }).catch(() => {
         alert('Erro no cadastro!');
@@ -49,16 +49,16 @@ function SignUp() {
       })
     }
     else if (papel == 2) {
-      API_URL.post('api/professional/register', {
+      AuthService.professionalRegister(
         firstName,
         lastName,
         /*nascimento,
         cpf: Number(cpf),
-        codigo,
         papel,*/
         email,
+        codigo,
         password
-      }).then(() => {
+      ).then(() => {
         alert('Cadastro realizado com sucesso!');
 
         history.push('/');
@@ -129,7 +129,7 @@ function SignUp() {
               />
             </div>
 
-            {papel == 2 &&(<div className="input-block">
+            {papel == 2 && (<div className="input-block">
               <label htmlFor="id">Código do Conselho</label>
               <input
                 type="text"

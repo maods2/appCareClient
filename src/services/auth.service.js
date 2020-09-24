@@ -47,11 +47,12 @@ class AuthService {
     });
   }
 
-  professionalRegister(firstName, lastName, email, password) {
+  professionalRegister(firstName, lastName, email, Doc, password) {
     return API_URL.post('api/professional/register', {
       firstName,
       lastName,
       email,
+      Doc,
       password
     });
   }
