@@ -11,7 +11,7 @@ class AuthService {
       .then(response => {
         if (response.data.token) {
           localStorage.setItem("user", JSON.stringify(response.data));
-          this.authenticated = true
+         
         }
 
         return response.data;
@@ -26,7 +26,7 @@ class AuthService {
       .then(response => {
         if (response.data.token) {
           localStorage.setItem("user", JSON.stringify(response.data));
-          this.authenticated = true
+        
         }
 
         return response.data;
@@ -64,7 +64,8 @@ class AuthService {
   isAuthenticated(){
     const user = JSON.parse(localStorage.getItem('user'));
     if(user){
-      return true
+      console.log(user)
+      return user
     } else {
       return false
     }

@@ -26,7 +26,12 @@ function App() {
         (async () => {
            const logged = await AuthService.isAuthenticated()
            setUserData(logged)
-            if (logged)  history.push('/appmenu');
+            if (logged.role == "Pacient") {
+                history.push('/appmenu');
+            } else if (logged.role == "Professional"){
+                history.push('/Dashboard');
+            }
+            
         })();
     }, []);
 
@@ -48,7 +53,7 @@ function App() {
     }
     return (
         <>
-            {!userData &&  <div id="page-app">
+            {!userData  &&  <div id="page-app">
                 <div id="page-app-content" className="container">
                     <div className="logo-container">
                         <img src={logoImg} alt="Teste" />

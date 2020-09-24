@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import '../../../assets/styles/global.css';
@@ -20,7 +20,7 @@ function LoginCuidadores() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-   
+    const [userData, setUserData] = useState();
 
     function handleCreateForm(e) {
         e.preventDefault()
@@ -32,6 +32,23 @@ function LoginCuidadores() {
         })
     }
     
+
+    useEffect(() => {
+        (async () => {
+           const logged = await AuthService.isAuthenticated()
+           setUserData(logged)
+            if (logged.role == "Pacient") {
+                history.push('/appmenu');
+            } else if (logged.role == "Professional"){
+                history.push('/Dashboard');
+            }
+            
+        })();
+    }, []);
+
+
+
+
     return (
         <div id="page-app">
             <div id="page-app-content" className="container">
