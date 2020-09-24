@@ -1,6 +1,8 @@
 import axios from 'axios';
-const API_URL = 'https://appsaudebackend.herokuapp.com/'
+// const API_URL = 'https://appsaudebackend.herokuapp.com/'
 import authHeader from './auth-header';
+const API_URL = 'http://localhost:3030/';
+
 
 
 class PatientService {
@@ -10,6 +12,10 @@ class PatientService {
 
     returnMyProfissionals (data){
         return axios.post(API_URL + '/api/professional/data/myprofissional', data, { headers: authHeader() });
+    }
+
+    novaAvaliacaoDiaria (data){
+        return axios.post(API_URL + '/api/daily/assessment/newdaily', data, { headers: authHeader() });
     }
 }
 

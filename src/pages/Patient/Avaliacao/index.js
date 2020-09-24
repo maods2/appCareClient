@@ -21,7 +21,7 @@ import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import './styles.css';
 import AuthService from '../../../services/auth.service'
-
+import PatientService from '../../../services/patient.service'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -97,15 +97,33 @@ export default function Avaliação() {
   const [anguish, setAnguish] = useState(0);
   const [anxious, setAnxious] = useState(0);
   const [userData, setUserData] = useState();
+  const [patient_id, setPatient_id] = useState();
+  const [patientdata_id, setPatientData] = useState();
 
   useEffect(() => {
-    const { user: { firstName } } = AuthService.getCurrentUser()
+    const { user: { firstName, _id , patientdata } } = AuthService.getCurrentUser()
     setUserData(firstName);
+    setPatient_id(_id);
+    setPatientData(patientdata);
+    
   }, []);
 
 
   const sendAssessement = () => {
-
+    PatientService.novaAvaliacaoDiaria({
+      patient_id,
+      patientdata_id,
+      pain, //Question 01
+      painLocation, //Question 0
+      worstPain, //Question 03
+      painAverage, //Question 04
+      moodInfluence, //Question 05
+      influenceRelationship, //Question 07
+      sleep, //Question 08
+      selfEsteem, //Question 09
+      anguish, //Question 11
+      anxious, //Question 12
+    })
   };
 
   // const handleDelete = index => {
@@ -192,7 +210,7 @@ export default function Avaliação() {
 
                 style={{ height: 50 }}
                 onClick={() => {
-                  setPainLocation(painLocation => [...painLocation, text])
+                  setPainLocation(painLocation => [...painLocation, Number(text)])
                 }}>
                 Inserir
               </Button>
@@ -217,7 +235,9 @@ export default function Avaliação() {
               <Button
 
                 style={{ height: 50 }}
-                onClick={(text2) => setWorstPain(text2)}>
+                onClick={() =>{ 
+                  setWorstPain(Number(text2));
+                  console.log(worstPain)}}>
                 Inserir
               </Button>
 
@@ -392,7 +412,7 @@ export default function Avaliação() {
             />
           </div>
 
-          <Fab onclick={sendAssessement} variant="extended" color="primary" aria-label="add" className={classes.margin}>
+          <Fab onClick={sendAssessement} variant="extended" color="primary" aria-label="add" className={classes.margin}>
             <NavigationIcon className={classes.extendedIcon} />
           Enviar Avaliação
         </Fab>
