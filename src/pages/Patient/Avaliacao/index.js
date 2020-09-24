@@ -84,13 +84,13 @@ export default function Avaliação() {
 
   const [text, setText] = useState(0);
   const [text2, setText2] = useState(0);
-  const [pain, setPain] = useState(false);
+  const [pain, setPain] = useState(0);
   const [painLocation, setPainLocation] = useState(initialArray);
   const [worstPain, setWorstPain] = useState(0);
   const [painAverage, setPainAverage] = useState(0);
   const [moodInfluence, setMoodInfluence] = useState(0);
   const [habitualActivities, setHabitualActivities] = useState(0);
-  const [influenceRelationship, setInfluenceRelationship] = useState(false);
+  const [influenceRelationship, setInfluenceRelationship] = useState(0);
   const [sleep, setSleep] = useState(0);
   const [sexBehavior, setSexBehavior] = useState(0);
   const [selfEsteem, setSelfEsteem] = useState(0);
@@ -166,8 +166,8 @@ export default function Avaliação() {
             <Box>
               <ButtonGroup className={classes.button} disableElevation variant="contained" color="primary" >
 
-                <Button onClick={() => { setPain(true) }}>Sim</Button>
-                <Button onClick={() => { setPain(false) }}>Não</Button>
+                <Button onClick={() => { setPain(1) }}>Sim</Button>
+                <Button onClick={() => { setPain(0) }}>Não</Button>
 
 
               </ButtonGroup>

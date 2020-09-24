@@ -9,8 +9,8 @@ class Assessment {
         return api.put('/api/daily/assessment/updaily', data);
     }
 
-    getAll (){
-        return api.get('/api/daily/assessment/all');
+    getDailyByUserID (patient_id){
+        return api.get('/api/daily/assessment/user', patient_id);
     }
 }
 
