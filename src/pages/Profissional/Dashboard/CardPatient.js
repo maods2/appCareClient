@@ -95,23 +95,8 @@ export default function CardPatient() {
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     Paciente que sofre de dor crônica na perna esquerda. Está seguindo o tratamento a X dias.
                          </Typography>
-
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Avaliação Diária
-                    </Button>
-                            <Button size="small" color="primary">
-                                Entrar em contato
-                        </Button>
-
-                        </CardActions>
-                        <CardContent>
-                            <Button onClick={handleClickOpen} size="small" color="primary">
-                                Adicionar Tarefa
-                        </Button>
-                        </CardContent>
                         <Dialog className={classes.dialogo} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                             <form onSubmit={handleCreateDialog}>
                                 <DialogTitle id="form-dialog-title"><b>Adicionar Meta</b></DialogTitle>
@@ -120,7 +105,6 @@ export default function CardPatient() {
                                         <strong>Adicionar meta ao to-do list do paciente. <br />Ps. Ao adicionar uma meta, ela irá automaticamente para o perfil do paciente. </strong> <br />
                                     </DialogContentText>
                                     <TextField
-
                                         autoFocus
                                         margin="dense"
                                         id="meta"
@@ -138,7 +122,6 @@ export default function CardPatient() {
                                 </DialogActions>
                             </form>
                         </Dialog>
-
                     </Card>
                 </div>
                 <div className={classes.column}>
@@ -158,22 +141,8 @@ export default function CardPatient() {
                          </Typography>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Avaliação Diária
-                        </Button>
-                            <Button size="small" color="primary">
-                                Entrar em contato
-                        </Button>
-                        </CardActions>
-                        <CardContent>
-                            <Button size="small" color="primary">
-                                Adicionar Tarefa
-                    </Button>
-                        </CardContent>
                     </Card>
                 </div>
-
                 <div className={classes.column}>
                     <Card className={classes.root}>
                         <CardActionArea>
@@ -185,25 +154,12 @@ export default function CardPatient() {
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
                                     Michael T.
-                        </Typography>
+                    </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     Paciente que sofre de dor crônica na perna esquerda. Está seguindo o tratamento a X dias.
                          </Typography>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Avaliação Diária
-        </Button>
-                            <Button size="small" color="primary">
-                                Entrar em contato
-        </Button>
-                        </CardActions>
-                        <CardContent>
-                            <Button size="small" color="primary">
-                                Adicionar Tarefa
-                    </Button>
-                        </CardContent>
                     </Card>
                 </div>
                 <div className={classes.column}>
@@ -223,19 +179,6 @@ export default function CardPatient() {
                          </Typography>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Avaliação Diária
-                         </Button>
-                            <Button size="small" color="primary">
-                                Entrar em contato
-                        </Button>
-                        </CardActions>
-                        <CardContent>
-                            <Button size="small" color="primary">
-                                Adicionar Tarefa
-                    </Button>
-                        </CardContent>
                     </Card>
                 </div>
             </div>
