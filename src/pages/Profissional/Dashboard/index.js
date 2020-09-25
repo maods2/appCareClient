@@ -250,7 +250,6 @@ export default function Dashboard() {
                 <TotalPatients />
               </Paper>
             </Grid>
-           
           </Grid>
           <Box pt={4}>
             <Copyright />
