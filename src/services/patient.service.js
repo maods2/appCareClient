@@ -15,8 +15,17 @@ class PatientService {
     }
 
     novaAvaliacaoDiaria (data){
-        return axios.post(API_URL + '/api/daily/assessment/newdaily', data, { headers: authHeader() });
+        return axios.put(API_URL + '/api/daily/assessment/newdaily', data, { headers: authHeader() });
     }
+
+    getAvaliacaoDiaria (data){
+        return axios.post(API_URL + '/api/daily/assessment/user', data, { headers: authHeader() });
+    }
+
+    updateAvaliacaoDiaria (data){
+        return axios.put(API_URL + '/api/daily/assessment/updaily', data, { headers: authHeader() });
+    }
+    
 }
 
 export default new PatientService();

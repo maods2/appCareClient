@@ -101,25 +101,61 @@ export default function Avaliação() {
   const [patientdata_id, setPatientData] = useState();
 
   useEffect(() => {
-    const { user: { firstName, _id , patientdata } } = AuthService.getCurrentUser()
+
+    fetchData()
+
+  }, []);
+
+  async function fetchData() {
+    const { user: { firstName, _id, patientdata } } = AuthService.getCurrentUser()
     setUserData(firstName);
     setPatient_id(_id);
     setPatientData(patientdata);
-    
-  }, []);
+    const patient_id = _id;
+    const avaliacao = await PatientService.getAvaliacaoDiaria({ patient_id })
+    console.log(avaliacao.data[0])
+    if (avaliacao.data[0]) {
+      const { pain,
+        painLocation,
+        worstPain,
+        painAverage,
+        moodInfluence,
+        habitualActivities,
+        influenceRelationship,
+        sleep,
+        sexBehavior,
+        selfEsteem,
+        anguish,
+        anxious } = avaliacao.data[0]
+      setPain(pain);
+      setPainLocation(painLocation);
+      setWorstPain(worstPain);
+      setPainAverage(painAverage);
+      setMoodInfluence(moodInfluence);
+      setHabitualActivities(habitualActivities);
+      setInfluenceRelationship(influenceRelationship);
+      setSleep(sleep);
+      setSexBehavior(sexBehavior);
+      setSelfEsteem(selfEsteem);
+      setAnguish(anguish);
+      setAnxious(anxious);
+    }
 
+  }
 
   const sendAssessement = () => {
-    PatientService.novaAvaliacaoDiaria({
+    PatientService.updateAvaliacaoDiaria({
       patient_id,
       patientdata_id,
       pain, //Question 01
       painLocation, //Question 0
       worstPain, //Question 03
       painAverage, //Question 04
-      moodInfluence, //Question 05
+      moodInfluence,
+      habitualActivities, //Question 05
       influenceRelationship, //Question 07
       sleep, //Question 08
+      sexBehavior,
       selfEsteem, //Question 09
       anguish, //Question 11
       anxious, //Question 12
@@ -235,9 +271,10 @@ export default function Avaliação() {
               <Button
 
                 style={{ height: 50 }}
-                onClick={() =>{ 
+                onClick={() => {
                   setWorstPain(Number(text2));
-                  console.log(worstPain)}}>
+                  console.log(worstPain)
+                }}>
                 Inserir
               </Button>
 
