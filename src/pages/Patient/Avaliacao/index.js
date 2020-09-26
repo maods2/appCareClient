@@ -99,6 +99,8 @@ export default function Avaliação() {
   const [userData, setUserData] = useState();
   const [patient_id, setPatient_id] = useState();
   const [patientdata_id, setPatientData] = useState();
+  const [avaliacaoDone, setAvaliacaoDone] = useState(false);
+  const [okToRender, setOkToRender] = useState(false);
 
   useEffect(() => {
 
@@ -108,13 +110,16 @@ export default function Avaliação() {
 
   async function fetchData() {
     const { user: { firstName, _id, patientdata } } = AuthService.getCurrentUser()
+
     setUserData(firstName);
     setPatient_id(_id);
     setPatientData(patientdata);
+
     const patient_id = _id;
     const avaliacao = await PatientService.getAvaliacaoDiaria({ patient_id })
-    console.log(avaliacao.data[0])
+    
     if (avaliacao.data[0]) {
+      setAvaliacaoDone(true)
       const { pain,
         painLocation,
         worstPain,
@@ -140,10 +145,31 @@ export default function Avaliação() {
       setAnguish(anguish);
       setAnxious(anxious);
     }
-
+    setOkToRender(true)
   }
 
   const sendAssessement = () => {
+    PatientService.novaAvaliacaoDiaria({
+      patient_id,
+      patientdata_id,
+      pain, //Question 01
+      painLocation, //Question 0
+      worstPain, //Question 03
+      painAverage, //Question 04
+      moodInfluence,
+      habitualActivities, //Question 05
+      influenceRelationship, //Question 07
+      sleep, //Question 08
+      sexBehavior,
+      selfEsteem, //Question 09
+      anguish, //Question 11
+      anxious, //Question 12
+    })
+    setAvaliacaoDone(true)
+  };
+
+
+  const updateAssessement = () => {
     PatientService.updateAvaliacaoDiaria({
       patient_id,
       patientdata_id,
@@ -161,19 +187,27 @@ export default function Avaliação() {
       anxious, //Question 12
     })
   };
-
   // const handleDelete = index => {
   //   const arrayChips = [...painLocation];
   //   arrayChips.splice(index, 1);
   //   setPainLocation(arrayChips);
   // };
 
+  const avaliationAlreadyDone = (<Fab onClick={sendAssessement} variant="extended" color="primary" aria-label="add" className={classes.margin}>
+    <NavigationIcon className={classes.extendedIcon} />
+                            Enviar Avaliação
+  </Fab>)
+
+  const avaliationDidntDone = (<Fab onClick={updateAssessement} variant="extended" color="primary" aria-label="add" className={classes.margin}>
+                                <NavigationIcon className={classes.extendedIcon} />
+                            update Avaliação
+                              </Fab>)
 
   return (
 
 
     <div align="center">
-      { userData && <div id="page-cuidadores" className="container">
+      { okToRender && <div id="page-cuidadores" className="container">
 
         <header className="page-header">
           <div className="top-bar-container">
@@ -449,16 +483,13 @@ export default function Avaliação() {
             />
           </div>
 
-          <Fab onClick={sendAssessement} variant="extended" color="primary" aria-label="add" className={classes.margin}>
-            <NavigationIcon className={classes.extendedIcon} />
-          Enviar Avaliação
-        </Fab>
+       
+          { avaliacaoDone ? avaliationDidntDone :  avaliationAlreadyDone }
+
 
 
         </Paper>
       </div>}
-
-
 
     </div>
 
