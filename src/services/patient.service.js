@@ -11,7 +11,7 @@ class PatientService {
     }
 
     returnMyProfissionals (data){
-        return axios.post(API_URL + '/api/professional/data/myprofissional', data, { headers: authHeader() });
+        return axios.post(API_URL + '/api/patient/data/myprofissional', data, { headers: authHeader() });
     }
 
     novaAvaliacaoDiaria (data){
@@ -25,6 +25,10 @@ class PatientService {
     updateAvaliacaoDiaria (data){
         return axios.put(API_URL + '/api/daily/assessment/updaily', data, { headers: authHeader() });
     }
+    
+
+
+
     
 }
 

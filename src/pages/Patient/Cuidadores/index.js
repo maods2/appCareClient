@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import logoImg from '../../../assets/images/logoAppWhite.svg';
@@ -17,10 +17,30 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
 
-
+import PatientService from '../../../services/patient.service'
+import AuthService from '../../../services/auth.service'
 
 export default function Cuidadores() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [profissionals, setProfissionals] = useState([]);
+  const [patient_id, setPatient_id] = useState();
+  const [email, setEmail] = useState();
+  const [profissionalUpdate, setProfissionalUpdate] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const { user: { firstName, _id } } = await AuthService.getCurrentUser()
+      const { data: { profissionals } } = await PatientService.returnMyProfissionals({ patient_id: _id })
+
+      setProfissionals(profissionals)
+      setPatient_id(_id)
+      setProfissionalUpdate(false)
+    })();
+
+  }, [profissionalUpdate]);
+
+
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -50,9 +70,13 @@ export default function Cuidadores() {
   }));
   const classes = useStyles();
 
-  function addNewCuidador() {
-    //Gerar um novo card de cuidadores.
+  async function addNewCuidador() {
+    const response = await PatientService.insertProfissional({patient_id: patient_id, email: email })
+
+    setProfissionalUpdate(true)
   }
+
+
 
   return (
     <div id="page-cuidadores" className="container">
@@ -78,7 +102,7 @@ export default function Cuidadores() {
           <DialogTitle className={classes.titulo} id="form-dialog-title"><b>Inserir Código</b></DialogTitle>
           <DialogContent >
             <DialogContentText className={classes.texto}>
-              <strong>Adicionar código para vincular sua conta com a do profissional de saúde.</strong> <br /> OBS.: Para conseguir o código, entre em contato com o seu médico.
+              <strong>Adicionar Email do Cuidador para vincular sua conta com o seu profissional de saúde.</strong> <br /> OBS.: Para conseguir o código, entre em contato com o seu médico.
               </DialogContentText>
             <TextField
               autoFocus
@@ -86,6 +110,8 @@ export default function Cuidadores() {
               id="código"
               label="Código"
               type="text"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               fullWidth
             />
           </DialogContent>
@@ -98,7 +124,11 @@ export default function Cuidadores() {
               </Button>
           </DialogActions>
         </Dialog>
-        <CuidadorList />
+        {profissionals.map(element => (
+
+          <CuidadorList key={element._id} props={element} />
+        ))}
+   
 
         <span className="total-connections">
           Produzido por: E-brains Team
