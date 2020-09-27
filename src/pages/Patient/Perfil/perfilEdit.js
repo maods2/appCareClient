@@ -59,9 +59,9 @@ export default function PerfilEdit() {
         <div >
 
           <div className="forms" >
-            <h1>PERFIL DO USUÁRIO</h1>
+            <h1>Informações Pessoais</h1>
             <TextField
-              label="Primeiro Nome"
+              label="Nome"
               id="margin-none"
               placeholder="Digite seu "
 
@@ -69,7 +69,7 @@ export default function PerfilEdit() {
               margin="normal"
             />
             <TextField
-              label="Último Nome"
+              label="Sobrenome"
               id="margin-dense"
               placeholder="Digite seu "
               className={classes.textField}
@@ -77,7 +77,7 @@ export default function PerfilEdit() {
               margin="normal"
             />
             <TextField
-              label="ocupação"
+              label="Gênero"
               id="margin-normal"
               placeholder="Digite seu "
               className={classes.textField}
@@ -86,8 +86,25 @@ export default function PerfilEdit() {
             />
 
 
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <Grid container justify="space-around">
+
+                <KeyboardDatePicker
+                  margin="normal"
+                  id="date-picker-dialog"
+                  label="Data do Nascimento"
+                  format="MM/dd/yyyy"
+                  value={selectedDate}
+                  onChange={handleDateChange}
+                  KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                  }}
+                />
+
+              </Grid>
+            </MuiPickersUtilsProvider>
             <TextField
-              label="outras doenças de base (diabetes, has, dislipidemia, por exemplo)"
+              label="Ocupação"
               id="margin-normal"
               placeholder="Digite seu "
               className={classes.textField}
@@ -95,7 +112,7 @@ export default function PerfilEdit() {
               margin="normal"
             />
             <TextField
-              label="quais profissionais acompanham ele (campo de atuação)"
+              label="Estado"
               id="margin-normal"
               placeholder="Digite seu "
               className={classes.textField}
@@ -103,15 +120,7 @@ export default function PerfilEdit() {
               margin="normal"
             />
             <TextField
-              label="medicações em uso (posologia: dose e frequência de uso)"
-              id="margin-normal"
-              placeholder="Digite seu "
-              className={classes.textField}
-
-              margin="normal"
-            />
-            <TextField
-              label="Principal condição de saúde que causa dores crônicas (doença/patologia):"
+              label="Cidade"
               id="margin-none"
               placeholder="Digite seu "
 
@@ -119,7 +128,55 @@ export default function PerfilEdit() {
               margin="normal"
             />
             <TextField
-              label="Já foi diagnosticado?"
+              label="Peso"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="Altura"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="IMC"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="Tipo Sanguíneo"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="Condição de saúde"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="Ano que foi Diagnosticado"
+              id="margin-dense"
+              placeholder="Digite seu "
+              className={classes.textField}
+
+              margin="normal"
+            />
+            <TextField
+              label="Medicações em Uso"
               id="margin-dense"
               placeholder="Digite seu "
               className={classes.textField}
