@@ -35,8 +35,11 @@ class PatientService {
     updateAvaliacaoDiaria (data){
         return axios.put(API_URL + '/api/daily/assessment/updaily', data, { headers: authHeader() });
     }
-    
 
+    getNews (data){
+        return axios.get(API_URL + '/api/PainEducation/news', data, { headers: authHeader() });
+    }
+    
 
 
     
