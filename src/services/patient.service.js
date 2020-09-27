@@ -6,6 +6,16 @@ const API_URL = 'http://localhost:3030';
 
 
 class PatientService {
+
+
+    getMyData (data){
+        return axios.post(API_URL + '/api/patient/data/myprofile', data, { headers: authHeader() });
+    }
+
+    updateMyData (data){
+        return axios.put(API_URL + '/api/patient/data/updateMyprofile', data, { headers: authHeader() });
+    }
+    
     insertProfissional (data){
         return axios.put(API_URL + '/api/patient/data/professionalInsertion', data, { headers: authHeader() });
     }

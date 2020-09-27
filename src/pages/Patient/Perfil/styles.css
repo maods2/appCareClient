@@ -1,5 +1,4 @@
-.forms
-{
+.forms {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -24,4 +23,13 @@ ListItem {
 
 .description {
     margin-right: 5px;
+}
+
+.send-buttom {
+    margin-top: 100px;
+    text-decoration: none;
+}
+
+.logout {
+    cursor: pointer;
 }
