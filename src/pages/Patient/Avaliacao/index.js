@@ -110,6 +110,7 @@ export default function Avaliação() {
 
   async function fetchData() {
     const { user: { firstName, _id, patientdata } } = AuthService.getCurrentUser()
+    const history = useHistory();l
 
     setUserData(firstName);
     setPatient_id(_id);
@@ -166,6 +167,7 @@ export default function Avaliação() {
       anxious, //Question 12
     })
     setAvaliacaoDone(true)
+    history.push('/appmenu');
   };
 
 
@@ -186,6 +188,8 @@ export default function Avaliação() {
       anguish, //Question 11
       anxious, //Question 12
     })
+    history.push('/appmenu');
+
   };
   // const handleDelete = index => {
   //   const arrayChips = [...painLocation];
