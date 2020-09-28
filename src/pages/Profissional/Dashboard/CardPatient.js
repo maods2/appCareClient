@@ -97,6 +97,8 @@ export default function CardPatient() {
                          </Typography>
                             </CardContent>
                         </CardActionArea>
+
+                        
                         <Dialog className={classes.dialogo} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                             <form onSubmit={handleCreateDialog}>
                                 <DialogTitle id="form-dialog-title"><b>Adicionar Meta</b></DialogTitle>
@@ -124,63 +126,8 @@ export default function CardPatient() {
                         </Dialog>
                     </Card>
                 </div>
-                <div className={classes.column}>
-                    <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="text"
-                                alt="Michael"
-                                title="Michael Thomas"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Michael T.
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    Paciente que sofre de dor crônica na perna esquerda. Está seguindo o tratamento a X dias.
-                         </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </div>
-                <div className={classes.column}>
-                    <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="text"
-                                alt="Michael"
-                                title="Michael Thomas"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Michael T.
-                    </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    Paciente que sofre de dor crônica na perna esquerda. Está seguindo o tratamento a X dias.
-                         </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </div>
-                <div className={classes.column}>
-                    <Card className={classes.root}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="text"
-                                alt="Michael"
-                                title="Michael Thomas"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Michael T.
-                        </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    Paciente que sofre de dor crônica na perna esquerda. Está seguindo o tratamento a X dias.
-                         </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </div>
+              
+   
             </div>
 
 

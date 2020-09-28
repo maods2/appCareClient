@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory, NavLink } from 'react-router-dom';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
+
 import '../../../assets/styles/global.css';
 import logoImg from '../../../assets/images/logoApp.svg';
 import LandingImg from '../../../assets/images/landingApp.svg';
@@ -10,28 +14,33 @@ import AuthService from '../../../services/auth.service'
 
 import './styles.css';
 
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
 
 function App() {
 
     const history = useHistory();
-
+    const classes = useStyles();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [checked, setChecked] = useState(false);
 
     const [userData, setUserData] = useState();
 
 
     useEffect(() => {
         (async () => {
-           const logged = await AuthService.isAuthenticated()
-           setUserData(logged)
+            const logged = await AuthService.isAuthenticated()
+            setUserData(logged)
             if (logged.role == "Pacient") {
                 history.push('/appmenu');
-            } else if (logged.role == "Professional"){
-                history.push('/Dashboard');
+            } else if (logged.role == "Professional") {
+                history.push('/MainPage');
             }
-            
+
         })();
     }, []);
 
@@ -48,12 +57,17 @@ function App() {
             email,
             password,
         });
-
-
     }
+
+    const toggleChecked = () => {
+        setChecked((prev) => !prev);
+
+        history.push('/LoginCuidador');
+    };
+
     return (
         <>
-            {!userData  &&  <div id="page-app">
+            {!userData && <div id="page-app">
                 <div id="page-app-content" className="container">
                     <div className="logo-container">
                         <img src={logoImg} alt="Teste" />
@@ -93,19 +107,22 @@ function App() {
                         </button>
                             </div>
                         </form>
-                        <div className="buttons-container-change">
-                            <button id="bebe">
-                                <NavLink to="/LoginCuidador">
-                                    Profissional
-                            </NavLink>
-                            </button>
+                        <div className="buttons-change">
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                               
+                                onClick={toggleChecked}
+                            >
+                                Cuidador
+                             </Button>
+                  
                         </div>
                     </main>
 
 
-                    {/* <Link to="/appmenu" className="botao">
-                        Entrar
-                </Link> */}
+
                     <div className="cadastro">
                         <Link to="/cadastro">
                             Ainda não tem conta? Cadastre-se

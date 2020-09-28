@@ -120,6 +120,7 @@ overflow: hidder;
     margin: .2rem 0;
 }
 
+
 .buttons-container a {
     width: 30rem;
     height: 4.5rem;
@@ -268,7 +269,7 @@ overflow: hidder;
         align-items: center;
         padding: 9px;
     }
-    .buttons-container-change {
+    .buttons-change {
         display: flex;
         grid-area: button;
         justify-content: center;
