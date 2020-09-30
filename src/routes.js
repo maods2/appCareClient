@@ -11,13 +11,18 @@ import SignUp from './pages/SignUp';
 import Metas from './pages/Patient/Metas';
 import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
-import Paperbase from './pages/Profissional/MainPage/index.js';
-import PaperbasePatient from './pages/Profissional/MainPage/indexPatient.js';
-import PaperbaseProfile from './pages/Profissional/MainPage/indexProfile.js';
+
+
+
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
+
 import ProtectedRoute from './services/ProtectedRoute';
 import Perfil from './pages/Patient/Perfil';
 import Perfiledit from './pages/Patient/Perfil/perfilEdit';
+
+import Paperbase from './pages/Profissional/MainPage/Main';
+import PaperbasePatient from './pages/Profissional/MainPage/MyPatient';
+import PaperbaseProfile from './pages/Profissional/MainPage/Profile';
 
 export default function Routes() {
   return (

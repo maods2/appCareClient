@@ -18,7 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import {  useHistory } from 'react-router-dom';
 
-import AuthService from '../../../services/auth.service';
+import AuthService from '../../../../services/auth.service';
 
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';

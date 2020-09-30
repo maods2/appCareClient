@@ -5,9 +5,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Navigator from './Navigator';
-import Content from './Content';
-import Header from './header';
+import Navigator from '../CuidadorPage-Components/Navigator';
+import Content from '../CuidadorPage-Components/Content';
+import Header from '../CuidadorPage-Components/header';
 
 function Copyright() {
   return (
@@ -161,7 +161,7 @@ const styles = {
   },
 };
 
-function PaperbasePatient(props) {
+function PaperbaseProfile(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -195,12 +195,15 @@ function PaperbasePatient(props) {
 
         <div className={classes.app}>
 
-          <Header onDrawerToggle={handleDrawerToggle} pageName={'Perfil Do Paciente'} />
+          <Header onDrawerToggle={handleDrawerToggle} pageName={'Meu Perfil'} />
 
           <main className={classes.main}>
-            <Content />
+            
+            
+
+            
           </main>
-          
+
           <footer className={classes.footer}>
             <Copyright />
           </footer>
@@ -210,8 +213,8 @@ function PaperbasePatient(props) {
   );
 }
 
-PaperbasePatient.propTypes = {
+PaperbaseProfile.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PaperbasePatient);
+export default withStyles(styles)(PaperbaseProfile);
