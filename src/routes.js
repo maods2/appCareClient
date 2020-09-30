@@ -23,6 +23,7 @@ import Perfiledit from './pages/Patient/Perfil/perfilEdit';
 import Paperbase from './pages/Profissional/MainPage/Main';
 import PaperbasePatient from './pages/Profissional/MainPage/MyPatient';
 import PaperbaseProfile from './pages/Profissional/MainPage/Profile';
+import patientTable from './pages/Profissional/MainPage/CuidadorPage-Components/patientTable.js';
 
 export default function Routes() {
   return (
@@ -43,6 +44,8 @@ export default function Routes() {
         <Route path="/MainPage" component = {Paperbase}/>
         <Route path="/MeuPaciente" component = {PaperbasePatient}/>
         <Route path="/MeuPerfil" component = {PaperbaseProfile}/>
+        <Route path="/table" component = {patientTable}/>
+
         </Switch>
     </BrowserRouter>
   );
