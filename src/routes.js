@@ -16,6 +16,7 @@ import Paperbase from './pages/Profissional/MainPage/index.js';
 import PaperbasePatient from './pages/Profissional/MainPage/indexPatient.js';
 import PaperbaseProfile from './pages/Profissional/MainPage/indexProfile.js';
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
+import GraficoDor from "./components/Charts/graficoDor"
 import ProtectedRoute from './services/ProtectedRoute';
 import Perfil from './pages/Patient/Perfil';
 import Perfiledit from './pages/Patient/Perfil/perfilEdit';
@@ -40,6 +41,7 @@ export default function Routes() {
         <Route path="/MainPage" component = {Paperbase}/>
         <Route path="/MeuPaciente" component = {PaperbasePatient}/>
         <Route path="/MeuPerfil" component = {PaperbaseProfile}/>
+        <Route path="/graficoDor" component = {GraficoDor}/>
         </Switch>
     </BrowserRouter>
   );

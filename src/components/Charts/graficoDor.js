@@ -6,11 +6,15 @@ export default function GraficoDor() {
     () => [
       {
         label: 'Series 1',
-        data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+        data: [{ x: 1, y: 10 }, { x: 2, y: 10 }, { x: 3, y: 10 }]
       },
       {
         label: 'Series 2',
-        data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+        data: [{ x: 3, y: 1 }, { x: 2, y: 10 }, { x: 1, y: 20 }]
+      },
+      {
+        label: 'Series 3',
+        data: [{ x: 1, y: 10 }, { x: 2, y: 10 }, { x: 3, y: 10 }]
       }
     ],
     []
@@ -24,9 +28,7 @@ export default function GraficoDor() {
     []
   )
  
-  const lineChart = (
-    // A react-chart hyper-responsively and continuously fills the available
-    // space of its parent element automatically
+  return (
     <div
       style={{
         width: '400px',
