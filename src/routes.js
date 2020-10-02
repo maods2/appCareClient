@@ -9,6 +9,7 @@ import Avaliacao from './pages/Patient/Avaliacao/index';
 import Cuidadores from './pages/Patient/Cuidadores';
 import SignUp from './pages/SignUp';
 import Metas from './pages/Patient/Metas';
+import MeuDesempenho from './pages/Patient/MeuDesempenho';
 import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
@@ -29,6 +30,7 @@ export default function Routes() {
         <ProtectedRoute path="/Cuidadores" component={Cuidadores} />
         <Route path="/Cadastro" component = {SignUp} />
         <ProtectedRoute path="/metas" component = {Metas}/>
+        <ProtectedRoute path="/meudesempenho" component = {MeuDesempenho}/>
         <ProtectedRoute path="/educacao" component = {Educacao}/>
         <Route path="/LoginCuidador" component = {LoginCuidador}/>
         <Route path="/ProfilePatient" component = {ProfilePatient}/>

@@ -51,7 +51,7 @@ function AppMenu() {
                             </NavLink>
                             </div>
                             <div className="buttons-container">
-                                <NavLink to="/AppMenu" className="study">
+                                <NavLink to="/meudesempenho" className="study">
                                     Meu desempenho
                             </NavLink>
                             </div>
