@@ -25,7 +25,7 @@ function PageHeader(props) {
             <img src={backIcon} alt="Voltar" />
           </Link>
           <img src={logoImg} alt="Cuidador" />
-          <a onClick={logout}>Logout</a>
+          <a className="logout" onClick={logout}>Logout</a>
         </div>
 
         <div className="header-content">

@@ -1,11 +1,22 @@
 import axios from 'axios';
-// const API_URL = 'https://appsaudebackend.herokuapp.com/'
+
 import authHeader from './auth-header';
-const API_URL = 'http://localhost:3030';
+const API_URL = 'https://appsaudebackend.herokuapp.com'
+// const API_URL = 'http://localhost:3030';
 
 
 
 class PatientService {
+
+
+    getMyData (data){
+        return axios.post(API_URL + '/api/patient/data/myprofile', data, { headers: authHeader() });
+    }
+
+    updateMyData (data){
+        return axios.put(API_URL + '/api/patient/data/updateMyprofile', data, { headers: authHeader() });
+    }
+    
     insertProfissional (data){
         return axios.put(API_URL + '/api/patient/data/professionalInsertion', data, { headers: authHeader() });
     }
@@ -25,8 +36,11 @@ class PatientService {
     updateAvaliacaoDiaria (data){
         return axios.put(API_URL + '/api/daily/assessment/updaily', data, { headers: authHeader() });
     }
-    
 
+    getNews (data){
+        return axios.get(API_URL + '/api/PainEducation/news', data, { headers: authHeader() });
+    }
+    
 
 
     

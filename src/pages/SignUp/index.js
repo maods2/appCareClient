@@ -61,11 +61,11 @@ function SignUp() {
       ).then(() => {
         alert('Cadastro realizado com sucesso!');
 
-        history.push('/');
+        history.push('/LoginCuidador');
       }).catch(() => {
         alert('Erro no cadastro!');
 
-        history.push('/');
+        history.push('/LoginCuidador');
 
       })
     }

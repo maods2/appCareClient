@@ -29,7 +29,7 @@ export default function Cuidadores() {
 
   useEffect(() => {
     (async () => {
-      const { user: { firstName, _id } } = await AuthService.getCurrentUser()
+      const { user: { patient_id:{ _id} } } = await AuthService.getCurrentUser()
       const { data: { profissionals } } = await PatientService.returnMyProfissionals({ patient_id: _id })
 
       setProfissionals(profissionals)
@@ -124,7 +124,7 @@ export default function Cuidadores() {
               </Button>
           </DialogActions>
         </Dialog>
-        {profissionals.map(element => (
+        {profissionals && profissionals.map(element => (
 
           <CuidadorList key={element._id} props={element} />
         ))}

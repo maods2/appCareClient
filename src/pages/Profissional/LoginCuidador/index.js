@@ -26,7 +26,7 @@ function LoginCuidadores() {
         e.preventDefault()
        
         AuthService.professionalLogin(email,password).then(() => {
-            history.push('/Dashboard');
+            history.push('/MainPage');
         }).catch(() => {
             alert('Erro! Usuário não cadastrado');
         })
@@ -40,7 +40,7 @@ function LoginCuidadores() {
             if (logged.role == "Pacient") {
                 history.push('/appmenu');
             } else if (logged.role == "Professional"){
-                history.push('/Dashboard');
+                history.push('/MainPage');
             }
             
         })();

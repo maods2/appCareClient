@@ -12,6 +12,9 @@ import Metas from './pages/Patient/Metas';
 import MeuDesempenho from './pages/Patient/MeuDesempenho';
 import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
+import Paperbase from './pages/Profissional/MainPage/index.js';
+import PaperbasePatient from './pages/Profissional/MainPage/indexPatient.js';
+import PaperbaseProfile from './pages/Profissional/MainPage/indexProfile.js';
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
 import ProtectedRoute from './services/ProtectedRoute';
 import Perfil from './pages/Patient/Perfil';
@@ -34,7 +37,11 @@ export default function Routes() {
         <ProtectedRoute path="/educacao" component = {Educacao}/>
         <Route path="/LoginCuidador" component = {LoginCuidador}/>
         <Route path="/ProfilePatient" component = {ProfilePatient}/>
+        <Route path="/MainPage" component = {Paperbase}/>
+        <Route path="/MeuPaciente" component = {PaperbasePatient}/>
+        <Route path="/MeuPerfil" component = {PaperbaseProfile}/>
         </Switch>
     </BrowserRouter>
   );
 }
+

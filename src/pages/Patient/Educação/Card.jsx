@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard({props}) {
   const classes = useStyles();
 
   return (
@@ -26,22 +26,21 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://s3.amazonaws.com/tinycards/image/8b896070c65d01f7aadb26b341a16bf5"
+          image={props.image}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+          {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" href="https://s3.amazonaws.com/tinycards/image/8b896070c65d01f7aadb26b341a16bf5">
-          Learn More
+        <Button size="small" color="primary" href={props.link}>
+          Leia Mais
         </Button>
       </CardActions>
     </Card>

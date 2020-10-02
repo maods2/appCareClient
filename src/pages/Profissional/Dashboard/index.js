@@ -43,7 +43,7 @@ function Copyright() {
   );
 }
 
-const drawerWidth = 240;
+const drawerWidth = 0;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,14 +63,15 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-    
-  },},
+    toolbarIcon: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: '0 8px',
+      ...theme.mixins.toolbar,
+
+    },
+  },
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: '100%',
@@ -144,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
   // fixedHeight: {
   //   height: 240,
   // },
-   inputInput: {
+  inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
@@ -170,7 +171,9 @@ export default function Dashboard() {
   return (
     <div className={classes.root}>
       <CssBaseline />
+
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+        
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -180,12 +183,12 @@ export default function Dashboard() {
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
             <MenuIcon />
-            
+
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Pacientes
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -197,16 +200,16 @@ export default function Dashboard() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+          </div> */}
           <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            {/* <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
-            </Badge>
+            </Badge> */}
           </IconButton>
-         
+
         </Toolbar>
       </AppBar>
-      <Drawer
+      {/* <Drawer
         variant="permanent"
         classes={{
           paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
@@ -222,25 +225,17 @@ export default function Dashboard() {
         <List>{mainListItems}</List>
         <Divider />
         <List>{secondaryListItems}</List>
-      </Drawer>
+      </Drawer> */}
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          
+
           <Grid container spacing={3}>
-             {/* Recent Patients */}
-             {/* <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Patients />
-              </Paper>
-            </Grid> */}
-            {/* Chart */}
+
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
                 <Title>Pacientes </Title>
-                <CardPatients />
-                <CardPatients />
-                <CardPatients />
+
                 <CardPatients />
               </Paper>
             </Grid>
