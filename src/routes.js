@@ -12,14 +12,20 @@ import Metas from './pages/Patient/Metas';
 import MeuDesempenho from './pages/Patient/MeuDesempenho';
 import Educacao from './pages/Patient/Educação';
 import LoginCuidador from './pages/Profissional/LoginCuidador';
-import Paperbase from './pages/Profissional/MainPage/index.js';
-import PaperbasePatient from './pages/Profissional/MainPage/indexPatient.js';
-import PaperbaseProfile from './pages/Profissional/MainPage/indexProfile.js';
+
+
+
 import ProfilePatient from './pages/Profissional/ProfilePatient/index.js';
 import GraficoDor from "./components/Charts/graficoDor"
+
 import ProtectedRoute from './services/ProtectedRoute';
 import Perfil from './pages/Patient/Perfil';
 import Perfiledit from './pages/Patient/Perfil/perfilEdit';
+
+import Paperbase from './pages/Profissional/MainPage/Main';
+import PaperbasePatient from './pages/Profissional/MainPage/MyPatient';
+import PaperbaseProfile from './pages/Profissional/MainPage/Profile';
+import patientTable from './pages/Profissional/MainPage/CuidadorPage-Components/patientTable.js';
 
 export default function Routes() {
   return (
@@ -42,6 +48,8 @@ export default function Routes() {
         <Route path="/MeuPaciente" component = {PaperbasePatient}/>
         <Route path="/MeuPerfil" component = {PaperbaseProfile}/>
         <Route path="/graficoDor" component = {GraficoDor}/>
+        <Route path="/table" component = {patientTable}/>
+
         </Switch>
     </BrowserRouter>
   );

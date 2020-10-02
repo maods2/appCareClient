@@ -5,9 +5,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Navigator from './Navigator';
-import Content from './Content';
-import Header from './header';
+import Navigator from '../CuidadorPage-Components/Navigator.js';
+import Content from '../CuidadorPage-Components/Content.js';
+import Header from '../CuidadorPage-Components/header.js';
+
+
 
 function Copyright() {
   return (
