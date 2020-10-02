@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -14,8 +14,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import CustomizedTables from './patientTable.js';
 
-
-
+import ProfissionalService from '../../../../services/profissional.service';
+import AuthService from '../../../../services/auth.service';
 
 
 
@@ -48,6 +48,26 @@ const styles = (theme) => ({
 function Content(props) {
   const { classes } = props;
 
+
+  const [patients, setPatients] = useState([]);
+  const [profissional_id, setProfissional_id] = useState();
+  const [email, setEmail] = useState();
+  const [patientUpdate, setPatientUpdate] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const { user: { _id } } = await AuthService.getCurrentUser()
+     
+      const { data: { patients } } = await ProfissionalService.returnMyPatients({ profissional_id: _id })
+      
+      setPatients(patients)
+      setProfissional_id(_id)
+      setPatientUpdate(false)
+    })();
+
+  }, [patientUpdate]);
+
+
   return (
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
@@ -69,13 +89,13 @@ function Content(props) {
         </Toolbar>
       </AppBar>
       {/* <div className={classes.contentWrapper}> */}
-        {/* <Typography color="textSecondary" align="center">
+      {/* <Typography color="textSecondary" align="center">
           No users for this project yet
         </Typography> */}
 
 
-        <CustomizedTables />
-        
+      {/* <CustomizedTables props={patients} /> */}
+
       {/* </div> */}
     </Paper>
   );

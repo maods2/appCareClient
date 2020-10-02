@@ -1,6 +1,7 @@
 import axios from 'axios';
-const API_URL = 'https://appsaudebackend.herokuapp.com'
 import authHeader from './auth-header';
+// const API_URL = 'https://appsaudebackend.herokuapp.com'
+const API_URL = 'http://localhost:3030';
 
 
 class ProfissionalService {
@@ -10,7 +11,7 @@ class ProfissionalService {
     }
 
     insertPatient (data){
-        return axios.put(API_URL + 'api/professional/data/patientInsertion', data, { headers: authHeader() });
+        return axios.put(API_URL + '/api/professional/data/patientInsertion', data, { headers: authHeader() });
     }
 
     returnMyPatients (data){
