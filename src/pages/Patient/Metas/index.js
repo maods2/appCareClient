@@ -21,7 +21,7 @@ import backIcon from '../../../assets/images/icons/back.svg';
 import './styles.css';
 
 
-import {PatientTask} from "../Metas/general.js";
+import PatientTask from "./general.js";
 
 
 // import styles from "assets/jss/dashboardStyle.js";

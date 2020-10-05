@@ -51,7 +51,6 @@ function Content(props) {
 
   const [patients, setPatients] = useState([]);
   const [profissional_id, setProfissional_id] = useState();
-  const [email, setEmail] = useState();
   const [patientUpdate, setPatientUpdate] = useState(false);
 
   useEffect(() => {
@@ -94,12 +93,12 @@ function Content(props) {
         </Typography> */}
 
 
-      {/* <CustomizedTables props={patients} /> */}
+      <CustomizedTables props={patients} />
 
       {/* </div> */}
     </Paper>
   );
-}
+} 
 
 
 
